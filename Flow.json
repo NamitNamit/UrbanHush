@@ -1,0 +1,215 @@
+[
+    {
+        "id": "354a8c83e9a42b3c",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f1b5c5b1.1b8e68",
+        "type": "mqtt in",
+        "z": "354a8c83e9a42b3c",
+        "name": "Temperature",
+        "topic": "sensors/temperature",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "b1b5c5b1.1b8e68",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 310,
+        "y": 180,
+        "wires": [
+            [
+                "eb55fff3dba20820",
+                "g1b5c5b1.1b8e68"
+            ]
+        ]
+    },
+    {
+        "id": "f2b5c5b1.1b8e68",
+        "type": "mqtt in",
+        "z": "354a8c83e9a42b3c",
+        "name": "Humidity",
+        "topic": "sensors/humidity",
+        "qos": "0",
+        "broker": "b1b5c5b1.1b8e68",
+        "inputs": 0,
+        "x": 320,
+        "y": 360,
+        "wires": [
+            [
+                "dd06545c4e1332cb",
+                "g2b5c5b1.1b8e68"
+            ]
+        ]
+    },
+    {
+        "id": "f3b5c5b1.1b8e68",
+        "type": "mqtt in",
+        "z": "354a8c83e9a42b3c",
+        "name": "Sound",
+        "topic": "sensors/sound",
+        "qos": "0",
+        "broker": "b1b5c5b1.1b8e68",
+        "inputs": 0,
+        "x": 330,
+        "y": 540,
+        "wires": [
+            [
+                "01235616779d57b4",
+                "g3b5c5b1.1b8e68"
+            ]
+        ]
+    },
+    {
+        "id": "eb55fff3dba20820",
+        "type": "debug",
+        "z": "354a8c83e9a42b3c",
+        "name": "Temperature Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "dd06545c4e1332cb",
+        "type": "debug",
+        "z": "354a8c83e9a42b3c",
+        "name": "Humidity Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "01235616779d57b4",
+        "type": "debug",
+        "z": "354a8c83e9a42b3c",
+        "name": "Sound Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "g2b5c5b1.1b8e68",
+        "type": "ui_gauge",
+        "z": "354a8c83e9a42b3c",
+        "name": "Humidity Gauge",
+        "group": "g1b5c5b1.1b8e68",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 100,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "x": 520,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "g3b5c5b1.1b8e68",
+        "type": "ui_gauge",
+        "z": "354a8c83e9a42b3c",
+        "name": "Sound Gauge",
+        "group": "g1b5c5b1.1b8e68",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sound",
+        "label": "Level",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 1023,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "x": 520,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "g1b5c5b1.1b8e68",
+        "type": "ui_gauge",
+        "z": "354a8c83e9a42b3c",
+        "name": "Temperature Gauge",
+        "group": "g1b5c5b1.1b8e68",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 100,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 540,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "b1b5c5b1.1b8e68",
+        "type": "mqtt-broker",
+        "name": "Shiftr.io",
+        "broker": "leven.cloud.shiftr.io",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    }
+]
