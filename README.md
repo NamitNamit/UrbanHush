@@ -1,1 +1,2 @@
 # UrbanHush
+This IoT-based Smart Noise Pollution Monitor utilizes real-time data from sound, vibration, and temperature sensors to track urban noise levels and environmental conditions. It leverages Node-RED as an MQTT client and cloud.shiftr.io as the MQTT broker, providing a scalable, cost-effective solution for urban noise analysis, enabling data-driven decisions for better environmental management.
